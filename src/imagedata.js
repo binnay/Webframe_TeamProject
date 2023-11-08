@@ -1,6 +1,6 @@
 // imagedata.js
-import slideImage1 from './media/slideImage1.png';
-import slideImage2 from './media/slideImage2.jpg';
+import slideImage1 from './images/slideImage1.png';
+import slideImage2 from './images/slideImage2.jpg';
 
 const imageData = [
     {
