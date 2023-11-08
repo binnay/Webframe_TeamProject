@@ -1,10 +1,10 @@
-import wangSanAk from './media/왕산악.png';
-import deulBul from './media/들불.png';
-import artCrew from './media/민족예술학회.png';
-import doIt from './media/DoIt.png';
-import meetingNom from './media/미팅놈들.png';
-import teddyBear from './media/곰돌이.png';
-import cat from './media/고양이.png';
+import wangSanAk from './images/왕산악.png';
+import deulBul from './images/들불.png';
+import artCrew from './images/민족예술학회.png';
+import doIt from './images/DoIt.png';
+import meetingNom from './images/미팅놈들.png';
+import teddyBear from './images/곰돌이.png';
+import cat from './images/고양이.png';
 
 export const dataDummy = [
     {
