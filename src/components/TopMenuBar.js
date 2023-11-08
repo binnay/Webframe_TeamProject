@@ -1,5 +1,5 @@
 import React from 'react';
-import homeImage from "../media/home.png";
+import homeImage from "../images/home.png";
 import './TopMenuBar.css';
 
 function TopMenuBar() {
