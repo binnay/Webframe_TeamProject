@@ -8,6 +8,7 @@ import Searching from "../components/Searching.js";
 
 function JoinPage() {
     const [searchTerm, setSearchTerm] = useState('');
+    const [isChecked, setIsChecked] = useState(false);
     const [filteredCrews, setFilteredCrews] = useState([]);
 
     const handleSearch = (searchTerm) => {
@@ -16,16 +17,22 @@ function JoinPage() {
 
     useEffect(() => {
         // 검색어가 비어 있을 때는 모든 동아리 정보를 출력합니다.
-        if (searchTerm === '') {
-            setFilteredCrews(dataDummy);
-        } else {
-            // 검색어와 crewName을 비교하여 일치하는 동아리 정보를 필터링합니다.
-            const filteredCrews = dataDummy.filter((crew) =>
+        let filteredData = dataDummy;
+
+        // 검색어와 crewName을 비교하여 일치하는 동아리 정보를 필터링합니다.
+        if (searchTerm !== '') {
+            filteredData = filteredData.filter((crew) =>
                 crew.crewName.includes(searchTerm)
             );
-            setFilteredCrews(filteredCrews);
         }
-    }, [searchTerm]);
+
+        // checkbox가 체크되어 있을 때 joining 값이 true인 동아리만 필터링합니다.
+        if (isChecked) {
+            filteredData = filteredData.filter((crew) => crew.joining);
+        }
+
+        setFilteredCrews(filteredData);
+    }, [searchTerm, isChecked]);
 
     return (
         <>
@@ -33,7 +40,7 @@ function JoinPage() {
             <div className="pageTitle">동아리가입</div>
             <div className="middle">               
                 <Searching onSearch={handleSearch}/>
-                <CheckBoxList/>
+                <CheckBoxList isChecked={isChecked} setIsChecked={setIsChecked}/>
             </div>
             <div className="crews-container">
                 {
