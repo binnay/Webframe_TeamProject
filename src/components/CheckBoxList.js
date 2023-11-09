@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './CheckBoxList.css';
 
-function CheckBoxList() {
-    const [isChecked, setIsChecked] = useState(false);
-
+function CheckBoxList({ isChecked, setIsChecked }) {
     const toggleCheckbox = () => {
         setIsChecked(!isChecked);
     };
